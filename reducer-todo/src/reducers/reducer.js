@@ -36,7 +36,7 @@ export const reducer = (state, action) => {
                 };
             return {
                 ...state,
-                todo: [...state.todo, newItem]
+                todo: [...state.todoData, newItem]
             };
 
         case 'TOGGLE_ITEM':

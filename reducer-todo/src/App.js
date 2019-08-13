@@ -10,30 +10,21 @@ const App = () => {
 
   console.log(dispatch);
 
-  // const addItem = (e, item) => {
-  //   e.preventDefault();
-  //   dispatch({ type: 'ADD_ITEM', payload: item});
-    
-  // };
+  
 
-  // toggleItem = itemId => {
-  //   dispatch({ type: 'TOGGLE_ITEM', payload: itemId});
-  // };
+  
 
-  const clearCompleted = e => {
-    e.preventDefault();
-    dispatch({ type: 'CLEAR_COMPLETED'});
-  };
+  
 
   return (
     <div className="App">
       <div className="header">
-        <h1>Testing, hello world!</h1>
+        <h1>Welcome to: ToDo List</h1>
         <ToDoForm  />
       </div>
     
-      <ToDoList todo={todo} clearCompleted={clearCompleted}/> 
-      {/* toggleItem={toggleItem} */}
+      <ToDoList todo={todo} /> 
+      
     </div>
   );
 }

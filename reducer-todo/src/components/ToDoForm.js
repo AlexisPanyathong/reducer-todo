@@ -1,38 +1,49 @@
-import React from 'react';
+import React, { useState, useReducer } from 'react';
+import { reducer, initialState } from '../reducers/reducer';
 
-class ToDoForm extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            item: ''
-        }
+import ToDo from '../components/ToDo';
+
+const ToDoForm = () => {
+
+    const [newToDo, setNewToDo] = useState();
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+    
+    const handleChanges = event => {
+       setNewToDo(event.target.value)
+    };
+
+    const addItem = event => {
+        event.preventDefualt();
+        dispatch({ type: 'ADD_ITEM', payload: newToDo});
+        setNewToDo('');
     }
+    // const toggleItem = itemId => {
+    //     dispatch({ type: 'TOGGLE_ITEM', payload: itemId});
+    // };
 
+    // const clearCompleted = event => {
+    //     event.preventDefault();
+    //     dispatch({ type: 'CLEAR_COMPLETED'});
+    // };
 
-    handleChanges = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
-
-    submitItem = e => {
-        e.preventDefault();
-        this.props.addItem(this.state.item);
-    };
-
-    render() {
-        return (
-            <form onSubmit={this.submitItem}>
+    return (
+        <>
+            <form>
+                
                 <input
-                type="text"
-                value={this.item}
-                name="item"
-                onChange={this.handleChanges}
+                    type="text"
+                    value={newToDo}
+                    name="todo"
+                    onChange={handleChanges}
                 />
-                <button>Add</button>
+                <div className="btn-container">
+                    <button onClick={addItem}>Add</button>
+                </div>
             </form>
-        );
-    }
+        </>
+    );
+    
 }
 
 export default ToDoForm;
