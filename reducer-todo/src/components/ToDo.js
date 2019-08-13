@@ -6,10 +6,10 @@ const ToDo = props => {
 
     return (
         <div
-        className={`item${props.item.completed ? ` completed` : ''}`}
-        onClick={() => props.toggleItem(props.item.id)}
+        className={`item${props.state.completed ? ` completed` : ''}`}
+        
         >
-            <p>{props.item.name}</p>
+            <p>{props.state.task}</p>
         </div> 
             
         

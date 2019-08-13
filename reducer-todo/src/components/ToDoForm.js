@@ -5,7 +5,7 @@ import ToDo from '../components/ToDo';
 
 const ToDoForm = () => {
 
-    const [newToDo, setNewToDo] = useState();
+    const [newToDo, setNewToDo] = useState('');
 
     const [state, dispatch] = useReducer(reducer, initialState);
     
@@ -14,7 +14,7 @@ const ToDoForm = () => {
     };
 
     const addItem = event => {
-        event.preventDefualt();
+        event.preventDefault();
         dispatch({ type: 'ADD_ITEM', payload: newToDo});
         setNewToDo('');
     }
@@ -26,7 +26,7 @@ const ToDoForm = () => {
     //     event.preventDefault();
     //     dispatch({ type: 'CLEAR_COMPLETED'});
     // };
-
+    console.log(state);
     return (
         <>
             <form>
@@ -39,7 +39,11 @@ const ToDoForm = () => {
                 />
                 <div className="btn-container">
                     <button onClick={addItem}>Add</button>
+
                 </div>
+                {state.todoData.map(item => (
+                    <ToDo key={item.id} state={item} />
+                ))}
             </form>
         </>
     );
