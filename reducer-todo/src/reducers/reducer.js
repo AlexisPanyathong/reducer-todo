@@ -2,26 +2,11 @@
 export const initialState = {
     todoData: [
         {
-          task: 'Study about Reducers',
+          task: '',
           id: 123,
           completed: false
-        },
-        {
-          task: 'Clean Bedroom',
-          id: 124,
-          completed: false
-        },
-        {
-          task: 'Wash Dishes',
-          id: 1235,
-          completed: false
-      
-        },
-        {
-          task: 'Laundry',
-          id: 1246,
-          completed: false
         }
+       
       ]
 }; 
 
@@ -49,6 +34,7 @@ export const reducer = (state, action) => {
             };
 
         case 'CLEAR_COMPLETED':
+            console.log(state.todoData.filter(item => !item.completed));
             return {
                 ...state,
                 todoData: state.todoData.filter(item => !item.completed)

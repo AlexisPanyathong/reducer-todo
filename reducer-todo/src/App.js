@@ -19,11 +19,11 @@ const App = () => {
   return (
     <div className="App">
       <div className="header">
-        <h1>Welcome to: ToDo List</h1>
+        <h1>To-Do List</h1>
         <ToDoForm  />
       </div>
     
-      <ToDoList todo={todo} /> 
+      {/* <ToDoList todo={todo} />  */}
       
     </div>
   );

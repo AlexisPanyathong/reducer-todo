@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 } */
+
+body {
+  background-color: #350A46;
+}
+
+h1 {
+  text-align: center;
+  color: #FFCC00;
+}
+
+p {
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.item.completed {
+  text-decoration: line-through;
+  color: red;
+}
