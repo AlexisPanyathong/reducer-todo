@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
 
+//App
+export const Header = styled.h1`
+    text-align: center;
+    font-size: 20px;
+`;
 
 
-
+//ToDo Form
 export const Body = styled.body`
     background-color: #0A235C;
+    width: 60%;
+    margin: 0 auto;
 `;
 
 export const Form = styled.div`
