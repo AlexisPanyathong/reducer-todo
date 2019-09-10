@@ -1,0 +1,14 @@
+body {
+  background-color: #CACACA;
+}
+
+p {
+    color: #FFCC00;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+.item.completed {
+    text-decoration: line-through;
+    color: red;
+  }

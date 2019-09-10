@@ -1,6 +1,5 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import ToDoForm from './components/ToDoForm';
-
 
 
 const App = () => {
@@ -9,10 +8,12 @@ const App = () => {
   
 
   return (
-    <div className="App">
-     <ToDoForm />
-      
-    </div>
+    
+      <div className="App">
+      <ToDoForm />
+        
+      </div>
+    
   );
 }
 
